@@ -13,7 +13,6 @@ function App() {
 
   let courses: ICourses[] = [
     { name: "Courses in England", prices: [0, 100] },
-    { name: "Courses in Zelda", prices: [0, 200] },
     { name: "Courses in Germany", prices: [500, null] },
     { name: "Courses in Italy", prices: [100, 200] },
     { name: "Courses in Russia", prices: [null, 400] },
@@ -27,8 +26,7 @@ function App() {
     const result: ICourses[] = courses.filter((item) => {
       // First type and Second type
       if (
-        (item.prices[0] <= Number(firstPrice) ||
-          item.prices[0] >= Number(firstPrice)) &&
+        item.prices[0] <= Number(firstPrice) &&
         item.prices[1] >= Number(firstPrice) &&
         item.prices[1] <= Number(secondPrice) &&
         firstPrice.length &&
@@ -36,6 +34,7 @@ function App() {
         item.prices[0] !== null &&
         item.prices[1] !== null
       ) {
+        console.log("first");
         return item;
       }
       // Fourth type
