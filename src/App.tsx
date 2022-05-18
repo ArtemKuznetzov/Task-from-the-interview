@@ -28,8 +28,8 @@ function App() {
       if (
         (item.prices[0] <= Number(firstPrice) ||
           item.prices[1] >= Number(firstPrice)) &&
-        (item.prices[1] <= Number(secondPrice) ||
-          item.prices[0] <= Number(secondPrice)) &&
+        item.prices[1] <= Number(secondPrice) &&
+        item.prices[0] <= Number(secondPrice) &&
         firstPrice.length &&
         secondPrice.length &&
         item.prices[0] !== null &&
