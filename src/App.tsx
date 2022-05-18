@@ -24,6 +24,7 @@ function App() {
 
   function checkFunc(firstPrice: string, secondPrice: string) {
     const result: ICourses[] = courses.filter((item) => {
+      // First type and Second type
       if (
         item.prices[0] <= Number(firstPrice) &&
         item.prices[1] <= Number(secondPrice) &&
@@ -34,6 +35,7 @@ function App() {
       ) {
         return item;
       }
+      // Fourth type
       if (
         !firstPrice.length &&
         item.prices[0] === null &&
@@ -42,6 +44,7 @@ function App() {
       ) {
         return item;
       }
+      // Third type
       if (
         !secondPrice.length &&
         item.prices[1] === null &&
@@ -50,6 +53,7 @@ function App() {
       ) {
         return item;
       }
+      // Fifth type
       if (
         !firstPrice.length &&
         !secondPrice.length &&
