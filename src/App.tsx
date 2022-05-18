@@ -35,7 +35,6 @@ function App() {
         item.prices[0] !== null &&
         item.prices[1] !== null
       ) {
-        console.log("first");
         return item;
       }
       // Fourth type
@@ -43,7 +42,8 @@ function App() {
         !firstPrice.length &&
         item.prices[0] === null &&
         secondPrice.length &&
-        Number(secondPrice) >= item.prices[1]
+        Number(secondPrice) >= item.prices[1] &&
+        item.prices[1] !== null
       ) {
         return item;
       }
@@ -52,7 +52,8 @@ function App() {
         !secondPrice.length &&
         item.prices[1] === null &&
         firstPrice.length &&
-        Number(firstPrice) >= item.prices[1]
+        Number(firstPrice) >= item.prices[0] &&
+        item.prices[0] !== null
       ) {
         return item;
       }
