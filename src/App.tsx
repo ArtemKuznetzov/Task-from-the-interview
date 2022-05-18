@@ -26,9 +26,10 @@ function App() {
     const result: ICourses[] = courses.filter((item) => {
       // First type and Second type
       if (
-        item.prices[0] <= Number(firstPrice) &&
-        item.prices[1] >= Number(firstPrice) &&
-        item.prices[1] <= Number(secondPrice) &&
+        (item.prices[0] <= Number(firstPrice) ||
+          item.prices[1] >= Number(firstPrice)) &&
+        (item.prices[1] <= Number(secondPrice) ||
+          item.prices[0] <= Number(secondPrice)) &&
         firstPrice.length &&
         secondPrice.length &&
         item.prices[0] !== null &&
