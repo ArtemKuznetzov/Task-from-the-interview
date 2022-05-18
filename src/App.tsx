@@ -24,15 +24,37 @@ function App() {
 
   function checkFunc(firstPrice: string, secondPrice: string) {
     const result: ICourses[] = courses.filter((item) => {
-      if (item.prices[0] === null) {
-        item.prices[0] = 0;
-      }
-      if (item.prices[1] === null) {
-        item.prices[1] = 0;
+      if (
+        item.prices[0] <= Number(firstPrice) &&
+        item.prices[1] <= Number(secondPrice) &&
+        firstPrice.length &&
+        secondPrice.length &&
+        item.prices[0] !== null &&
+        item.prices[1] !== null
+      ) {
+        return item;
       }
       if (
-        item.prices[0] === Number(firstPrice) &&
-        item.prices[1] === Number(secondPrice)
+        !firstPrice.length &&
+        item.prices[0] === null &&
+        secondPrice.length &&
+        Number(secondPrice) >= item.prices[1]
+      ) {
+        return item;
+      }
+      if (
+        !secondPrice.length &&
+        item.prices[1] === null &&
+        firstPrice.length &&
+        Number(firstPrice) >= item.prices[1]
+      ) {
+        return item;
+      }
+      if (
+        !firstPrice.length &&
+        !secondPrice.length &&
+        item.prices[0] === null &&
+        item.prices[1] === null
       ) {
         return item;
       }
