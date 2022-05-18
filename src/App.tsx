@@ -36,7 +36,6 @@ function App() {
         item.prices[0] !== null &&
         item.prices[1] !== null
       ) {
-        console.log("first");
         return item;
       }
       // Fourth type
@@ -46,7 +45,6 @@ function App() {
         secondPrice.length &&
         Number(secondPrice) >= item.prices[1]
       ) {
-        console.log("second");
         return item;
       }
       // Third type
@@ -56,7 +54,6 @@ function App() {
         firstPrice.length &&
         Number(firstPrice) >= item.prices[1]
       ) {
-        console.log("third");
         return item;
       }
       // Fifth type
@@ -66,7 +63,6 @@ function App() {
         item.prices[0] === null &&
         item.prices[1] === null
       ) {
-        console.log("fourth");
         return item;
       }
       return false;
