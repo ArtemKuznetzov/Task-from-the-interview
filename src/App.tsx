@@ -24,7 +24,7 @@ function App() {
 
   function checkFunc(firstPrice: string, secondPrice: string) {
     const result: ICourses[] = courses.filter((item) => {
-      // First type and Second type
+      // First type
       if (
         (item.prices[0] <= Number(firstPrice) ||
           item.prices[1] >= Number(firstPrice)) &&
