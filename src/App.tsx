@@ -67,7 +67,7 @@ function App() {
 
   // Курсы из Франции возвращаются всегда. Так и задумано
 
-  return <div></div>;
+  
 }
 
 export default App;
