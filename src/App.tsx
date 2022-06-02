@@ -65,9 +65,9 @@ function App() {
   let requiredRange3 = [200, null];
   console.log(findCourses(requiredRange1));
 
-  // Курсы из Франции возвращаются всегда. Так и задумано
+  // Курсы из Франции возвращаются всегда, т.к. здесь цена не имеет никакого значения, а значит сравнивать с чем-либо не надо.
 
-  
+  return <div></div>;
 }
 
 export default App;
