@@ -1,5 +1,3 @@
-import "./App.scss";
-
 interface ICourses {
   name: string;
   prices: [number, number] | [number, null] | [null, number] | [null, null];
